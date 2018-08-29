@@ -8,7 +8,7 @@ const StyledText = styled(({tag, children, ...props}) => React.createElement(tag
   ${props => makeMedia(props.theme.fonts[props.use])};
 `;
 
-const Text = ({use='body', tag, children}) => {
+const Text = ({use='body', tag, children, ...prop}) => {
   const tags = {
     h1: {
       tag: "h1"
@@ -25,7 +25,7 @@ const Text = ({use='body', tag, children}) => {
   };
 
   return (
-    <StyledText use={use} tag={tag ? tag : tags[use].tag}>
+    <StyledText use={use} tag={tag ? tag : tags[use].tag} {...prop}>
       {children}
     </StyledText>
   )

@@ -8,6 +8,7 @@
     "react": "^16.4.1",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-svg": "^6.0.2",
     "styled-components": "^3.3.2",
@@ -26,5 +27,6 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.5.1",
     "react-app-rewired": "^1.5.2"
-  }
+  },
+  "homepage": "http://f-end.info/local_sites/wunder_x/"
 }

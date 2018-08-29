@@ -2,8 +2,9 @@ import React from 'react';
 import ReactSVG from 'react-svg';
 import styled from 'styled-components';
 
-import Text from './Text';
 import Button from './Button';
+
+import { formatTypo } from '../styles/theme';
 
 import headerLogo from '../img/headerLogo.svg';
 
@@ -38,23 +39,21 @@ const HeaderNavList = styled.ul`
   display: flex;
 `;
 const HeaderNavItem = styled.li`
-  margin-right: 45px;
+  margin-right: 40px;
 `;
 const HeaderNavLink = styled.a.attrs({
   href: ''
 })`
   color: ${props => props.theme.colors.blue.main};
-
-  &:hover {
-    color: white;
-  }
+  font-size: ${formatTypo(14)};
+  letter-spacing: 0;
 
   &:visited {
     color: ${props => props.theme.colors.blue.main};
+  }
 
-    &:hover {
-      color: white;
-    }
+  &:hover {
+    color: white;
   }
 `;
 

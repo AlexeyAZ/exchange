@@ -56,20 +56,23 @@ const theme = {
       },
       darkGray: {
         main: '#181925',
-        dark: '#13141c'
+        dark: '#13141c',
+        darken: '#0c0c15'
       }
     },
     fonts: {
       h1: {
         phone: {
           fontSize: formatTypo(34),
-          lineHeight: formatTypo(38)
+          lineHeight: formatTypo(38),
+          fontWeight: 'bold'
         }
       },
       h3: {
         phone: {
           fontSize: formatTypo(20),
-          lineHeight: formatTypo(30)
+          lineHeight: formatTypo(30),
+          fontWeight: 'bold'
         }
       },
       body1: {
@@ -78,27 +81,42 @@ const theme = {
           lineHeight: formatTypo(28)
         }
       },
+      body2: {
+        phone: {
+          fontSize: formatTypo(14),
+          lineHeight: formatTypo(22)
+        }
+      },
+      body3: {
+        phone: {
+          fontSize: formatTypo(12)
+        }
+      },
       body: {
         phone: {
           fontSize: formatTypo(defaultFontSize),
           lineHeight: formatTypo(24)
         }
       },
-      button: {
-        fontSize: '16px',
-        lineHeight: '22px',
-        fontWeight: 'bold'
+      primaryButton: {
+        phone: {
+          fontSize: formatTypo(defaultFontSize),
+          lineHeight: formatTypo(22),
+          fontWeight: 'bold'
+        }
       },
       buttonSmall: {
         fontSize: '14px',
         lineHeight: '16px'
       },
       input: {
-        fontSize: '14px'
+        phone: {
+          fontSize: formatTypo(14)
+        }
       },
     }
   }
 };
 
 export default theme;
-export {defaultFontSize, mediaUp, mediaDown, makeMedia};
+export {defaultFontSize, formatTypo, mediaUp, mediaDown, makeMedia};
