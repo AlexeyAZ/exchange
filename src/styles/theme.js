@@ -13,6 +13,12 @@ const breakpoints = {
   phone: 0
 }
 
+const formatBreakpoints = breakpoints =>
+  Object.keys(breakpoints).reduce((result, key) => {
+    result[key] = parseInt(breakpoints[key], 10);
+    return result;
+  }, {});
+
 const mediaUp = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (min-width: ${breakpoints[label]}) {
@@ -44,6 +50,16 @@ const makeMedia = (obj, prop) => {
 
 const theme = {
   main: {
+    breakpoints: formatBreakpoints(breakpoints),
+    spacing: {
+      1: '0',
+      2: '0.25rem',
+      3: '0.5rem',
+      4: '1rem',
+      5: '2rem',
+      6: '4rem',
+      7: '8rem'
+    },
     colors: {
       blue: {
         main: '#656999'
@@ -63,6 +79,11 @@ const theme = {
     fonts: {
       h1: {
         phone: {
+          fontSize: formatTypo(24),
+          lineHeight: formatTypo(28),
+          fontWeight: 'bold'
+        },
+        tablet: {
           fontSize: formatTypo(34),
           lineHeight: formatTypo(38),
           fontWeight: 'bold'
@@ -70,6 +91,11 @@ const theme = {
       },
       h3: {
         phone: {
+          fontSize: formatTypo(defaultFontSize),
+          lineHeight: formatTypo(26),
+          fontWeight: 'bold'
+        },
+        tablet: {
           fontSize: formatTypo(20),
           lineHeight: formatTypo(30),
           fontWeight: 'bold'
@@ -77,6 +103,10 @@ const theme = {
       },
       body1: {
         phone: {
+          fontSize: formatTypo(defaultFontSize),
+          lineHeight: formatTypo(22)
+        },
+        tablet: {
           fontSize: formatTypo(20),
           lineHeight: formatTypo(28)
         }

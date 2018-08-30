@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Button from './Button';
 
-import { formatTypo } from '../styles/theme';
+import { formatTypo, mediaUp, mediaDown } from '../styles/theme';
 
 import headerLogo from '../img/headerLogo.svg';
 
@@ -33,13 +33,18 @@ const HeaderWrap = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const HeaderNavList = styled.ul`
   display: flex;
 `;
 const HeaderNavItem = styled.li`
-  margin-right: 40px;
+  margin-right: 20px;
+
+  ${mediaUp.phone_l`
+    margin-right: 40px;
+  `};
 `;
 const HeaderNavLink = styled.a.attrs({
   href: ''
@@ -79,7 +84,13 @@ const Logo = styled(ReactSVG).attrs({
 `;
 
 const LoginButton = styled(Button)`
-  margin-left: auto;
+  ${mediaDown.phone_l`
+    display: none;
+  `};
+
+  ${mediaUp.phone_l`
+    margin-left: auto;
+  `};
 `;
 
 const Header = () =>

@@ -12,6 +12,7 @@
     "react-scripts": "1.1.4",
     "react-svg": "^6.0.2",
     "styled-components": "^3.3.2",
+    "styled-components-spacing": "^3.1.0",
     "styled-reset": "^1.3.5"
   },
   "scripts": {
@@ -28,5 +29,5 @@
     "babel-plugin-styled-components": "^1.5.1",
     "react-app-rewired": "^1.5.2"
   },
-  "homepage": "http://f-end.info/local_sites/wunder_x/"
+  "homepage": "."
 }

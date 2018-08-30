@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Content from '../components/Content';
+import ExchangePromoContent from '../components/ExchangePromoContent';
 import LoginSidebar from '../components/LoginSidebar';
 import ExchangePromo from '../components/ExchangePromo';
 
 const Index = () =>
-  <Content>
+  <ExchangePromoContent>
     <LoginSidebar
       headTitle='Log in'
       headLink={{
@@ -27,6 +27,6 @@ const Index = () =>
       }}
     />
     <ExchangePromo />
-  </Content>
+  </ExchangePromoContent>
 
 export default Index;

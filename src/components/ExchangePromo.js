@@ -10,6 +10,8 @@ import leverageUpTo100 from '../img/leverageUpTo100.svg';
 import lowLatencies from '../img/lowLatencies.svg';
 import lowFeesAndRebates from '../img/lowFeesAndRebates.svg';
 
+import { mediaUp } from '../styles/theme';
+
 const exchangePromoData = [
   {
     title: 'Derivatives',
@@ -35,12 +37,24 @@ const exchangePromoData = [
 
 const ExchangePromoWrap = styled.div`
   background-color: ${props => props.bgColor ? props.bgColor : 'black'};
-  padding: 55px 60px;
+  padding: 30px 15px;
+
+  ${mediaUp.tablet`
+    padding: 35px 40px;
+  `};
+
+  ${mediaUp.desktop`
+    padding: 55px 60px;
+  `};
 `;
 
 const ExchangePromoHead = styled.div`
-  margin-bottom: 40px;
-  padding-left: 100px;
+  margin-bottom: 60px;
+  max-width: 730px;
+
+  ${mediaUp.desktop`
+    padding-left: 100px;
+  `};
 `;
 
 const GrayText = styled(Text)`
@@ -48,18 +62,25 @@ const GrayText = styled(Text)`
 `;
 
 const AdvantageList = styled.div`
-  display: flex;
-  flex-flow: wrap;
+  ${mediaUp.desktop`
+    display: flex;
+    flex-flow: wrap;
+  `};
+`;
+
+const AdvantageListItemRoot = styled.div`
+  margin-bottom: 70px;
+
+  ${mediaUp.desktop`
+    flex-basis: 50%;
+    flex-shrink: 1;
+    width: 50%;
+  `};
 `;
 
 const AdvantageListItemWrap = styled.div`
-  margin-bottom: 40px;
-  padding-right: 35px;
-  padding-left: 100px;
+  padding-top: 60px;
   position: relative;
-  flex-basis: 50%;
-  flex-grow: 1;
-  flex-shrink: 1;
 
   &:before {
     content: '';
@@ -69,21 +90,37 @@ const AdvantageListItemWrap = styled.div`
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    left: 35px;
+    left: 0;
     height: 50px;
     width: 50px;
+
+    ${mediaUp.desktop`
+      left: 35px;
+    `};
   }
+
+  ${mediaUp.phone_l`
+    padding-top: 0;
+    padding-left: 60px;
+  `};
+
+  ${mediaUp.desktop`
+    padding-left: 100px;
+    padding-right: 50px;
+  `};
 `;
 
 const AdvantageListItem = ({ title, text, icon}) =>
-  <AdvantageListItemWrap icon={icon}>
-    <Text use='h3'>
-      {title}
-    </Text>
-    <GrayText use='body'>
-      {text}
-    </GrayText>
-  </AdvantageListItemWrap>
+  <AdvantageListItemRoot>
+    <AdvantageListItemWrap icon={icon}>
+      <Text use='h3'>
+        {title}
+      </Text>
+      <GrayText use='body'>
+        {text}
+      </GrayText>
+    </AdvantageListItemWrap>
+  </AdvantageListItemRoot>
 
 const ExchangePromo = ({ bgColor }) =>
   <ExchangePromoWrap bgColor={bgColor}>

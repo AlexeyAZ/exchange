@@ -19,6 +19,7 @@ const baseStyles = () => injectGlobal`
       font-family: 'Formular', Arial, Helvetica, sans-serif;
       font-weight: 300;
       color: white;
+      min-width: 320px;
     }
 
     a {

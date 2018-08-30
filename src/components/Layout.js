@@ -4,11 +4,16 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 
+import { mediaUp } from '../styles/theme';
+
 const LayoutWrap = styled.div`
   background-color: ${props => props.theme.colors.darkGray.dark};
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
+
+  ${mediaUp.tablet`
+    min-height: 100vh;
+  `};
 `;
 
 const LayoutContent = styled.div`

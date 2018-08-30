@@ -1,12 +1,12 @@
 import React from 'react';
 import { withTheme  } from 'styled-components';
 
-import Content from '../components/Content';
+import ExchangePromoContent from '../components/ExchangePromoContent';
 import LoginSidebar from '../components/LoginSidebar';
 import ExchangePromo from '../components/ExchangePromo';
 
 const Index = ({ theme }) =>
-  <Content>
+  <ExchangePromoContent>
     <LoginSidebar
       headTitle='Register'
       headLink={{
@@ -36,6 +36,6 @@ const Index = ({ theme }) =>
       }}
     />
     <ExchangePromo bgColor={theme.colors.darkGray.darken}/>
-  </Content>
+  </ExchangePromoContent>
 
 export default withTheme (Index);
